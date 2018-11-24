@@ -1,0 +1,14 @@
+<% include partials/header %>
+<a href="/spreads/new">Add New</a>
+<div class="container">
+<div class="row">
+  <% spreads.forEach(function(spreads) { %>
+    <div class="col-12 col-md-6 col-lg-3">
+      <h1><%= spreads.name %></h1>
+      <img class="img-fluid" src="<%= spreads.img %>">
+    </div>
+  <% }); %>
+</div>
+</div>
+
+<% include partials/footer %>

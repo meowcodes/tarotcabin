@@ -1,0 +1,13 @@
+<% include partials/header %>
+
+<h1>Submit a New Spread</h1>
+
+<form action="/spreads" method="POST">
+  <input type="text" name="name" placeholder="spread name">
+  <input type="number" name="number" placeholder="number of cards">
+  <input type="url" name="img" palceholder="image url">
+  <button>Submit</button>
+</form>
+
+<a href="/spreads">Back</a>
+<% include partials/footer %>
