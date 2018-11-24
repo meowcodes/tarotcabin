@@ -9,10 +9,10 @@
 <div class="row">
   <div class="col-12">
     <form class="form-group" action="/spreads/<%= spread._id %>?_method=PUT" method="POST">
-      <input class="form-control" name="name" type="text" value="<%= spread.name %>">
-      <input class="form-control" name="num" type="number" value="<%= spread.num %>">
-      <input class="form-control" name="imgUrl" type="url" value="<%= spread.imgUrl %>">
-      <textarea class="form-control" name="notes" type="text"rows="10"><%= spread.notes %></textarea>
+      <input class="form-control" name="editedSpread[name]" type="text" value="<%= spread.name %>">
+      <input class="form-control" name="editedSpread[num]" type="number" value="<%= spread.num %>">
+      <input class="form-control" name="editedSpread[imgUrl]" type="url" value="<%= spread.imgUrl %>">
+      <textarea class="form-control" name="editedSpread[notes]" type="text"rows="10"><%= spread.notes %></textarea>
       <button class="btn">Submit</button>
     </form>
   </div>

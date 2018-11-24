@@ -2,8 +2,8 @@
 var express         = require("express"),
     app             = express(),
     bodyParser      = require("body-parser"),
-    mongoose        = require("mongoose"),
     methodOverride  = require("method-override"),
+    mongoose        = require("mongoose"),
     Spread          = require("./models/spread.js")
     
 // initialize packages for use
@@ -51,17 +51,12 @@ app.get("/spreads/new", function(req, res){
 
 // CREATE  /spreads            POST    Add new spread to DB          Spread.create()
 app.post("/spreads", function(req, res){
-  var name = req.body.name;
-  var num = req.body.num;
-  var imgUrl = req.body.imgUrl;
-  var notes = req.body.notes;
-  var newSpread = {name: name, num: num, imgUrl: imgUrl, notes: notes};
+  var newSpread = req.body.newSpread;
   
   Spread.create(newSpread, function(err, newSpread){
     if(err) {
       console.log(err);
     } else {
-      console.log(newSpread);
       res.redirect("spreads");
     }
   });
@@ -90,11 +85,20 @@ app.get("/spreads/:id/edit", function(req, res){
     } else {
       res.render("editSpread", {spread:foundSpread});
     }
-  });
+  }); 
 });
 
 // UPDATE  /spreads/:id        PUT     Update a spread and redirect  Spread.findByIdAndUpdate()
-app.put("/spreads/:id/edit", function(req, res){
+app.put("/spreads/:id", function(req, res){
+  var editedSpread = req.body.editedSpread;
+  
+  Spread.findByIdAndUpdate(req.params.id, editedSpread, function(err, editedSpread){
+    if(err) {
+      res.redirect("/spreads");
+    } else {
+      res.redirect("/spreads/" + req.params.id);
+    }
+  });
 });
 
 // DESTROY /spreads/:id        DELETE  Delete a spread and redirect  Spread.findByIdAndDelete()
