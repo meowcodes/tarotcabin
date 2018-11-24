@@ -1,7 +1,7 @@
-# tarotcabin: MEAN stack blog/tarot web app<br/>
+# tarotcabin: MEAN stack blog/tarot web app<br>
 
-*** steps ***<br/>
-initialize npm & install packages
+*** steps ***<br>
+initialize npm & install packages<br>
 install and run mongoDB
 <pre>
   $ sudo apt-get install -y mongodb-org
