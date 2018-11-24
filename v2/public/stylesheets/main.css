@@ -1,0 +1,15 @@
+body {
+  background-color: lavender;
+  color: #737497;
+}
+
+.search-btn {
+  border: none;
+  background-color: inherit;
+  color: inherit;
+}
+
+header {
+  margin-bottom: 2em;
+}
+/* #A7A8CD */

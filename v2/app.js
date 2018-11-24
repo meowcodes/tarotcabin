@@ -8,6 +8,7 @@ var express     = require("express"),
 // initialize packages for use
 mongoose.connect("mongodb://localhost/tarot_cabin", {useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 
 // creating initial data
