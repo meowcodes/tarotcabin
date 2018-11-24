@@ -1,6 +1,6 @@
 # tarotcabin: MEAN stack blog/tarot web app<br/>
 
-*** steps ***
+*** steps ***<br/>
 initialize npm & install packages
 install and run mongoDB
 <pre>
