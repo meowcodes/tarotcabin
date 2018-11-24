@@ -67,6 +67,15 @@ app.post("/spreads", function(req, res){
 
 // SHOW    /spreads/:id        GET     Displays one spread           Spread.findById()
 app.get("/spreads/:id", function(req, res){
+  var spreadId = req.params.id;
+  
+  Spread.findById(spreadId, function(err, foundSpread){
+    if(err) {
+      console.log(err);
+    } else {
+      res.render("spread", {spread:foundSpread});
+    }
+  });
 });
 
 // EDIT    /spreads/:id/edit   GET     Display edit form             Spread.findById()
