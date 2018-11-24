@@ -1,17 +1,19 @@
-<pre>
-# tarotcabin: MEAN stack blog/tarot web app
+# tarotcabin: MEAN stack blog/tarot web app<br/>
 
 *** steps ***
 initialize npm & install packages
 install and run mongoDB
+<pre>
   $ sudo apt-get install -y mongodb-org
   $ mkdir data
   $ echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"' > mongod
   $ chmod a+x mongod
   $ ./mongod
+</pre>
 declare packages as variables
 app.listen to listen for requests
 set up RESTful routes
+<pre>
   INDEX   /spreads            GET     Display all spreads           Spread.find()
   NEW     /spreads/new        GET     Displays create form          N/A
   CREATE  /spreads            POST    Add new spread to DB          Spread.create()
@@ -19,6 +21,7 @@ set up RESTful routes
   EDIT    /spreads/:id/edit   GET     Display edit form             Spread.findById()
   UPDATE  /spreads/:id        PUT     Update a spread and redirect  Spread.findByIdAndUpdate()
   DESTROY /spreads/:id        DELETE  Delete a spread and redirect  Spread.findByIdAndDelete()
+</pre>
 create corresponding ejs pages under /views
 create partial header and footer under /views/partials
 link bootstrap
@@ -32,6 +35,4 @@ set up and style SHOW page
 set up and style EDIT page
 set up UPDATE functionality
 set up DESTROY functionality
-</pre>
 
-does this look different?
