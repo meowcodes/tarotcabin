@@ -13,3 +13,17 @@ header {
   margin-bottom: 2em;
 }
 /* #A7A8CD */
+.row {
+  margin-bottom: 1em;
+}
+.new-spread-btn {
+  float: right;
+  background: inherit;
+  color: inherit;
+  border: white solid 3px;
+  padding: 0.5em;
+}
+.new-spread-btn:hover {
+  text-decoration: none;
+  color: inherit;
+}

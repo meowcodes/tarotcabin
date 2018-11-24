@@ -12,20 +12,20 @@ app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 
 // creating initial data
-Spread.create(
-  {
-    name: "Daily Draw", 
-    num: 2, 
-    imgUrl: "https://66.media.tumblr.com/b90740aad62d102c5d6a48cd8247ba58/tumblr_ok07bsEaXn1vkzjjno1_500.jpg",
-    notes: "simple daily draw"
-  }, function(err, spread){ 
-    if(err){
-      console.log(err);
-    } else {
-      console.log("New spread: ");
-      console.log(spread.name);
-    }
-});
+// Spread.create(
+//   {
+//     name: "Daily Draw", 
+//     num: 2, 
+//     imgUrl: "https://66.media.tumblr.com/b90740aad62d102c5d6a48cd8247ba58/tumblr_ok07bsEaXn1vkzjjno1_500.jpg",
+//     notes: "simple daily draw"
+//   }, function(err, spread){ 
+//     if(err){
+//       console.log(err);
+//     } else {
+//       console.log("New spread: ");
+//       console.log(spread.name);
+//     }
+// });
 
 // RESTful routes
 // INDEX   /spreads            GET     Display all spreads           Spread.find()
@@ -49,7 +49,20 @@ app.get("/spreads/new", function(req, res){
 
 // CREATE  /spreads            POST    Add new spread to DB          Spread.create()
 app.post("/spreads", function(req, res){
-  res.redirect("spreads");
+  var name = req.body.name;
+  var num = req.body.num;
+  var imgUrl = req.body.imgUrl;
+  var notes = req.body.notes;
+  var newSpread = {name: name, num: num, imgUrl: imgUrl, notes: notes};
+  
+  Spread.create(newSpread, function(err, newSpread){
+    if(err) {
+      console.log(err);
+    } else {
+      console.log(newSpread);
+      res.redirect("spreads");
+    }
+  });
 });
 
 // SHOW    /spreads/:id        GET     Displays one spread           Spread.findById()
