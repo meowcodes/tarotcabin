@@ -1,4 +1,4 @@
-# tarotcabin: MEAN stack blog/tarot web app<br>
+# tarotcabin: MEAN stack tarot web app<br>
 
 *** steps ***<br>
 initialize npm & install packages<br>
