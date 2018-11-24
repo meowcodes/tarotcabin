@@ -94,7 +94,7 @@ app.put("/spreads/:id", function(req, res){
   
   Spread.findByIdAndUpdate(req.params.id, editedSpread, function(err, editedSpread){
     if(err) {
-      res.redirect("/spreads");
+      console.log(err);
     } else {
       res.redirect("/spreads/" + req.params.id);
     }
@@ -103,13 +103,19 @@ app.put("/spreads/:id", function(req, res){
 
 // DESTROY /spreads/:id        DELETE  Delete a spread and redirect  Spread.findByIdAndDelete()
 app.delete("/spreads/:id", function(req, res){
-  res.redirect("spreads");
+  Spread.findByIdAndDelete(req.params.id, function(err, editedSpread){
+    if(err) {
+      console.log(err);
+    } else {
+      res.redirect("/spreads");
+    }
+  });
 });
 
 // catch-all page
 app.get("*", function(req, res){
   res.render("index");
-})
+});
 
 // listen for http requests
 app.listen(process.env.PORT, process.env.IP, function() {});

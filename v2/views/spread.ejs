@@ -9,6 +9,9 @@
 <div class="row">
   <div class="col-12">
     <a class="new-spread-btn" href="/spreads/<%= spread._id %>/edit">Edit Spread</a>
+    <form action="/spreads/<%= spread._id %>?_method=DELETE" method="POST">
+      <button class="new-spread-btn">Delete</button>
+    </form>
   </div>
 </div>
 <div class="row">
