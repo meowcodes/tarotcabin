@@ -1,14 +1,16 @@
 // packages as variables
-var express     = require("express"),
-    app         = express(),
-    bodyParser  = require("body-parser"),
-    mongoose    = require("mongoose"),
-    Spread      = require("./models/spread.js")
+var express         = require("express"),
+    app             = express(),
+    bodyParser      = require("body-parser"),
+    mongoose        = require("mongoose"),
+    methodOverride  = require("method-override"),
+    Spread          = require("./models/spread.js")
     
 // initialize packages for use
 mongoose.connect("mongodb://localhost/tarot_cabin", {useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
+app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
 
 // creating initial data
@@ -80,6 +82,15 @@ app.get("/spreads/:id", function(req, res){
 
 // EDIT    /spreads/:id/edit   GET     Display edit form             Spread.findById()
 app.get("/spreads/:id/edit", function(req, res){
+  var spreadId = req.params.id;
+  
+  Spread.findById(spreadId, function(err, foundSpread){
+    if(err) {
+      console.log(err);
+    } else {
+      res.render("editSpread", {spread:foundSpread});
+    }
+  });
 });
 
 // UPDATE  /spreads/:id        PUT     Update a spread and redirect  Spread.findByIdAndUpdate()

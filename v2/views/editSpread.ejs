@@ -1,5 +1,22 @@
 <% include ./partials/header %>
 
-<h1>Edit a spread</h1>
+<div class="container">
+<div class="row">
+  <div class="col-12 text-center">
+    <h1>Edit Spread</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <form class="form-group" action="/spreads/<%= spread._id %>?_method=PUT" method="POST">
+      <input class="form-control" name="name" type="text" value="<%= spread.name %>">
+      <input class="form-control" name="num" type="number" value="<%= spread.num %>">
+      <input class="form-control" name="imgUrl" type="url" value="<%= spread.imgUrl %>">
+      <textarea class="form-control" name="notes" type="text"rows="10"><%= spread.notes %></textarea>
+      <button class="btn">Submit</button>
+    </form>
+  </div>
+</div>
+</div>
 
 <% include ./partials/footer %>
