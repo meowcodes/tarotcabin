@@ -3,10 +3,10 @@ var express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
     mongoose    = require("mongoose")
-
+    
 // initialize packages for use
-mongoose.connect("mongdb://localhost/tarotcabin", {useNewUrlParser: true});
-app.use(bodyParser.urlencoded({extnded: true}));
+mongoose.connect("mongodb://localhost/tarot_cabin", {useNewUrlParser: true});
+app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
 // RESTful routes
@@ -45,7 +45,7 @@ app.delete("/spreads/:id", function(req, res){
   res.redirect("spreads");
 });
 
-// catch all page
+// catch-all page
 app.get("*", function(req, res){
   res.render("index");
 })
