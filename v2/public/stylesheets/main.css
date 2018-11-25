@@ -1,29 +1,67 @@
+/*
+LAVENDER          #E6E6FA    RGB(230, 230, 250)
+                  (#e6e6fa, #e8e5fb, #eae4fb, #ece3fb, #efe2fb)
+                  (#e6e6fa, #fbddf7, #ffd3de, #ffd2b8, #ffdb98)
+LAVENDERBLUSH     #FFF0F5    RGB(255, 240, 245)
+*/
+
+/* header.ejs */
 body {
-  background-color: lavender;
-  color: #737497;
+  background-image: linear-gradient(to bottom, #e6e6fa, #fbddf7, #ffd3de, #ffd2b8, #ffdb98);
+  color: #A48AA8;
+  font-family: 'Merriweather', serif;
 }
 
-.search-btn {
+/* navbar */
+.dropdown-menu {
+  background-color: #efe2fb;
+  color: inherit;
+  border-radius: 0px;
+  border: #A48AA8 solid 1px;
+}
+.dropdown-divider {
+  border-color: #A48AA8!important;
+}
+
+/* repeated elements */
+i,
+a,
+a:hover,
+.dropdown-item,
+.dropdown-itme:hover {
+  background-color: inherit!important;
+  color: inherit!important;
+  text-decoration: none!important;
+}
+.title {
+  float: left;
+}
+.card {
+  background-color: rgba(255, 255, 255,0.25);
+  border-radius: 0px;
   border: none;
-  background-color: inherit;
+}
+.tc-btn {
+  float: right;
+  padding: 0.5em;
   color: inherit;
+  background-color: transparent;
+  border: 3px solid rgba(255, 255, 255,0.5);
+}
+.tc-btn:hover {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255,0.5);
+  border: 3px solid transparent;
 }
 
-header {
-  margin-bottom: 2em;
+
+/* index.ejs */
+.intro {
+  max-height: 100vh;
+  height: 700px;
 }
-/* #A7A8CD */
-.row {
-  margin-bottom: 1em;
-}
-.new-spread-btn {
-  float: right;
-  background: inherit;
-  color: inherit;
-  border: white solid 3px;
-  padding: 0.5em;
-}
-.new-spread-btn:hover {
-  text-decoration: none;
-  color: inherit;
-}
+
+
+
+/* spread.ejs */
+

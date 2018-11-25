@@ -8,9 +8,9 @@
 </div>
 <div class="row">
   <div class="col-12">
-    <a class="new-spread-btn" href="/spreads/<%= spread._id %>/edit">Edit Spread</a>
+    <button class="tc-btn"><a href="/spreads/<%= spread._id %>/edit">Edit Spread</a></button>
     <form action="/spreads/<%= spread._id %>?_method=DELETE" method="POST">
-      <button class="new-spread-btn">Delete</button>
+      <button class="tc-btn">Delete</button>
     </form>
   </div>
 </div>
@@ -19,11 +19,15 @@
   <div class="card">
     <div class="card-body">
       <h3 class="card-title"><%= spread.name %></h3>
-      <h5 class="card-subtitle text-muted"><%= spread.num %> Cards</h5>
+      <h5 class="card-subtitle"><%= spread.num %> Cards</h5>
     </div>
     <img class="img-fluid" src="<%= spread.imgUrl %>" alt="<%= spread.name %> spread">
     <div class="card-body">
       <p class="card-text"><%= spread.notes %></p>
+      <% spread.comments.forEach(function(comment){ %>
+        <p>Author: <%= comment.author %></p>
+        <p>Comment: <%= comment.text %></p>
+      <% }) %>
     </div>
   </div>
   </div>

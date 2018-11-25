@@ -4,30 +4,17 @@ var express         = require("express"),
     bodyParser      = require("body-parser"),
     methodOverride  = require("method-override"),
     mongoose        = require("mongoose"),
-    Spread          = require("./models/spread.js")
+    Spread          = require("./models/spread.js"),
+    TarotDeck       = require("./models/tarotDeck.js"),
+    SeedDB          = require("./seeds")
     
 // initialize packages for use
+SeedDB();
 mongoose.connect("mongodb://localhost/tarot_cabin", {useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
-
-// creating initial data
-// Spread.create(
-//   {
-//     name: "Daily Draw", 
-//     num: 2, 
-//     imgUrl: "https://66.media.tumblr.com/b90740aad62d102c5d6a48cd8247ba58/tumblr_ok07bsEaXn1vkzjjno1_500.jpg",
-//     notes: "simple daily draw"
-//   }, function(err, spread){ 
-//     if(err){
-//       console.log(err);
-//     } else {
-//       console.log("New spread: ");
-//       console.log(spread.name);
-//     }
-// });
 
 // RESTful routes
 // INDEX   /spreads            GET     Display all spreads           Spread.find()
@@ -66,10 +53,11 @@ app.post("/spreads", function(req, res){
 app.get("/spreads/:id", function(req, res){
   var spreadId = req.params.id;
   
-  Spread.findById(spreadId, function(err, foundSpread){
+  Spread.findById(spreadId).populate("comments").exec(function(err, foundSpread){
     if(err) {
       console.log(err);
     } else {
+      console.log(foundSpread);
       res.render("spread", {spread:foundSpread});
     }
   });
