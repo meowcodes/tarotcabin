@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<div class="container">
+<div class="row">
+  <div class="col-12 p-5">
+    <h1 class="title">Spread Collection</h1>
+    <button class="tc-btn"><a href="/spreads/new">Add New</a></button>
+  </div>
+</div>
+<div class="row">
+  <% spreads.forEach(function(spreads) { %>
+  <div class="col-12 col-md-6 col-lg-3">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= spreads.name %></h5>
+      <h6 class="card-subtitle"><%= spreads.num %> Cards</h6>
+    </div>
+    <img class="img-fluid" src="<%= spreads.imgUrl %>" alt="<%= spreads.name %> spread">
+    <div class="card-body">
+      <a href="/spreads/<%= spreads._id %>" class="tc-btn">Details</a>
+    </div>
+  </div>
+  </div>
+  <% }); %>
+</div>
+</div>
+
+<% include ../partials/footer %>

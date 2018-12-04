@@ -24,7 +24,7 @@ set up RESTful routes<br>
 </pre>
 create corresponding ejs pages under /views<br>
 create partial header and footer under /views/partials<br>
-link bootstrap<br>
+link bootstrap and public/stylesheets/main.css<br>
 include partials on ejs files<br>
 create and link data module files<br>
 set up data schema/model<br>
@@ -35,4 +35,6 @@ set up and style SHOW page<br>
 set up and style EDIT page<br>
 set up UPDATE functionality<br>
 set up DESTROY functionality<br>
-
+seeds.js<br>
+create comment schema<br>
+associate comments<br>

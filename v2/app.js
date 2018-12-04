@@ -26,14 +26,14 @@ app.get("/spreads", function(req, res){
     if(err){
       console.log(err);
     } else {
-      res.render("spreads",{spreads : allSpreads});
+      res.render("spreads/index",{spreads : allSpreads});
     }
   });
 });
 
 // NEW     /spreads/new        GET     Displays create form          N/A
 app.get("/spreads/new", function(req, res){
-  res.render("newSpread");
+  res.render("spreads/new");
 });
 
 // CREATE  /spreads            POST    Add new spread to DB          Spread.create()
@@ -58,7 +58,7 @@ app.get("/spreads/:id", function(req, res){
       console.log(err);
     } else {
       console.log(foundSpread);
-      res.render("spread", {spread:foundSpread});
+      res.render("spread/show", {spread:foundSpread});
     }
   });
 });
@@ -71,7 +71,7 @@ app.get("/spreads/:id/edit", function(req, res){
     if(err) {
       console.log(err);
     } else {
-      res.render("editSpread", {spread:foundSpread});
+      res.render("spread/edit", {spread:foundSpread});
     }
   }); 
 });
@@ -99,6 +99,11 @@ app.delete("/spreads/:id", function(req, res){
     }
   });
 });
+
+//NEW     /spreads/:id/comments/new GET Displays comment form
+app.get("/spreads/:id/comments/new", function(req, res) {
+    res.render("newComment");
+})
 
 // catch-all page
 app.get("*", function(req, res){
