@@ -1,12 +1,15 @@
 /* pinks: #ffc0cb, #fda9b9, #fa91a7, #f57996, #f05e85 */
 
-body .index {
-  background-image: linear-gradient(to bottom, #e6e6fa, #fbddf7, #ffd3de, #ffd2b8, #ffdb98);
+body {
   font-family: 'Bree Serif', serif;
 }
 
-.index .row {
-  height: 100%;
+body .index {
+  background-image: linear-gradient(to bottom, #e6e6fa, #fbddf7, #ffd3de, #ffd2b8, #ffdb98);
+}
+
+.row {
+  min-height: 100%;
 }
 
 .title {
@@ -15,4 +18,41 @@ body .index {
 
 .liner {
   color: #fda9b9;
+}
+
+body .cards-index {
+  background-image: linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%);
+}
+
+.cards-index .row {
+  width: 720px;
+}
+
+.cards-index-box {
+  max-height: 100px;
+}
+
+.card-div {
+  background-color: rgb(255,255,255,0.5);
+  width: 18%;
+  text-align: center;
+  color: lightcoral;
+}
+
+.card-div,
+.card-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.card-box {
+  width: 23%;
+  height: 200px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  background-color: lightcoral;
+  color: mistyrose;
 }
