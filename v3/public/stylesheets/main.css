@@ -1,3 +1,18 @@
-body {
-  background-color: lavender;
+/* pinks: #ffc0cb, #fda9b9, #fa91a7, #f57996, #f05e85 */
+
+body .index {
+  background-image: linear-gradient(to bottom, #e6e6fa, #fbddf7, #ffd3de, #ffd2b8, #ffdb98);
+  font-family: 'Bree Serif', serif;
+}
+
+.index .row {
+  height: 100%;
+}
+
+.title {
+  color: #fa91a7;
+}
+
+.liner {
+  color: #fda9b9;
 }
