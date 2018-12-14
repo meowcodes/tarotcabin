@@ -1,0 +1,25 @@
+{
+  "name": "tarotcabin",
+  "version": "1.0.5",
+  "description": "tarot web app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meowcodes/tarotcabin.git"
+  },
+  "keywords": [
+    "tarot"
+  ],
+  "author": "meowcodes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meowcodes/tarotcabin/issues"
+  },
+  "homepage": "https://github.com/meowcodes/tarotcabin#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
