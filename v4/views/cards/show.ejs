@@ -1,0 +1,21 @@
+<% include ../partials/header %>
+<div class="container-fluid cards-show">
+<div class="row text-center">
+  <div class="col-12 col-md-4">
+    <div class="single-card">
+      <svg viewBox="0,0 400,600">
+        <use xlink:href="#card" href="#card"></use>
+        <text class="text-uppercase" x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px"><%= tarotCard.title %></text>
+      </svg>
+    </div>
+  </div>
+  <div class="col-12 col-md-8">
+    <div class="text-box">
+      <h3>keywords</h3>
+      <%= tarotCard.keywords %>
+      <h3>interpretation</h3>
+    </div>
+  </div>
+</div>
+</div>
+<% include ../partials/footer %>

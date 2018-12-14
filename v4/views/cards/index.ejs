@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+<div class="container-fluid cards-index">
+<div class="row d-flex">
+  <div class="cards-index-box col-12 d-flex justify-content-around my-3">
+    <div class="major-arcana card-div">
+      <h5>major<br/>arcana</h5>
+    </div>
+    <div class="cups-suit card-div">
+      <h5>suit of<br/>cups</h5>
+    </div>
+    <div class="pentacles-suit card-div">
+      <h5>suit of<br/>pentacles</h5>
+    </div>
+    <div class="swords-suit card-div">
+      <h5>suit of<br/>swords</h5>
+    </div>
+    <div class="wands-suit card-div">
+      <h5>suit of<br/>wands</h5>
+    </div>
+  </div>
+  <div class="major-arcana-box col-12 d-flex flex-row flex-wrap justify-content-center">
+    <% tarotCards.forEach(function(tarotCard){ %>
+    <div class="tarot-card">
+      <svg viewBox="0,0 400,600">
+        <use xlink:href="#card" href="#card"></use>
+        <text class="text-uppercase" x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px"><%= tarotCard.title %></text>
+      </svg>
+      <a href="/cards/<%= tarotCard._id %>"><span></span></a>
+    </div>
+
+    <% }); %>
+  </div>
+</div>
+</div>
+<% include ../partials/footer %>
