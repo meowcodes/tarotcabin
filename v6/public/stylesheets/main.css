@@ -1,13 +1,36 @@
-/* pinks: #ffc0cb, #fda9b9, #fa91a7, #f57996, #f05e85 */
+/* 
+#ffee58, #ffb452, #ff7c70, #f05695, #a74faf
+#ffee58, #ffd654, #ffbf56, #ffa95c, #ff9563, #ff856a, #fc7674, #f6687f, #ea5c8c, #d95398, #c34fa4, #a74faf
+ffee58-ff7c70-a74faf-292f36-4ecdc4
+										
+ffee58	e6d64f	ccbe46	b3a73e	998f35	80772c	665f23	4c471a	333012	191809	000000
+ffee58	fff069	fff179	fff38a	fff59b	fff7ac	fff8bc	fffacd	fffcde	fffdee	ffffff
+ffb452	e6a24a	cc9042	b37e39	996c31	805a29	664821	4c3619	332410	191208	000000
+ffb452	ffbc63	ffc375	ffcb86	ffd297	ffdaa9	ffe1ba	ffe9cb	fff0dc	fff8ee	ffffff
+ff7c70	e67065	cc635a	b3574e	994a43	803e38	66322d	4c2522	331916	190c0b	000000
+ff7c70	ff897e	ff968d	ffa39b	ffb0a9	ffbeb8	ffcbc6	ffd8d4	ffe5e2	fff2f1	ffffff
+f05695	d84d86	c04577	a83c68	903459	782b4b	60223c	481a2d	30111e	18090f	000000
+f05695	f267a0	f378aa	f589b5	f69abf	f8abca	f9bbd5	fbccdf	fcddea	feeef4	ffffff
+a74faf	96479e	863f8c	75377a	642f69	542858	432046	321834	211023	110811	000000
+a74faf	b061b7	b972bf	c184c7	ca95cf	d3a7d7	dcb9df	e5cae7	eddcef	f6edf7	ffffff
+292f36	252a31	21262b	1d2126	191c20	15181b	101316	0c0e10	08090b	040505	000000
+292f36	3e444a	54595e	696d72	7f8286	94979b	a9acaf	bfc1c3	d4d5d7	eaeaeb	ffffff
+4ecdc4	46b9b0	3ea49d	379089	2f7b76	276762	1f524e	173d3b	102927	081414	000000
+4ecdc4	60d2ca	71d7d0	83dcd6	95e1dc	a7e6e2	b8ebe7	caf0ed	dcf5f3	edfaf9	ffffff
+
+
+pinks: #ffc0cb, #fda9b9, #fa91a7, #f57996, #f05e85 
+*/
 
 body {
   font-family: 'Bree Serif', serif;
 }
- a {
-   color: inherit;
-   text-decoration: none;
-   fill: inherit;
- }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  fill: inherit;
+}
 
 .index {
   background-image: linear-gradient(to bottom, #e6e6fa, #fbddf7, #ffd3de, #ffd2b8, #ffdb98);
@@ -15,7 +38,7 @@ body {
 
 .row {
   min-height: 100%;
-  max-width: 720px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -76,7 +99,13 @@ body {
   background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
 }
 
-.cards-show li {
+.keywords-box {
+  margin: 2em auto;
+  background-color: rgb(255,255,255,0.4);
+  border: honeydew solid 9px;
+}
+
+.keywords-box li {
   display: inline-block;
   text-decoration: none;
   padding: 0.5em;
