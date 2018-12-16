@@ -12,16 +12,17 @@ $(document).click(function(event){
 });
 
 // remove parent item when remove-btn is clicked
-$("ul").on("click", ".remove-item", function(event) {
-  $(this).parent().remove();
-  event.stopPropagation;
-});
+// $("ul").on("click", ".remove-item", function(event) {
+//   $(this).parent().remove();
+//   event.stopPropagation;
+// });
 
 // add new keyword when 'enter' is pressed
 $(".keyword-input").keypress(function(event) {
   if (event.key === "Enter"){
-    var inputText = $(this).val();
-    $(this).val("");
-    $(".keywords-list").append('<li><span>' + inputText + '</span><span class="remove-item"><i class="fas fa-times-circle"></i></span></li>');
+    $('button[type=submit] .default').click();
+    // console.log($(this).val(), this.value);
+    // var inputText = $(this).val();
+    // $(".keywords-list").append('<li><span>' + inputText + '</span><span class="remove-item"><i class="fas fa-times-circle"></i></span></li>');
   }
 });

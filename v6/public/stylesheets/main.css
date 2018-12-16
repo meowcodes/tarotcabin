@@ -36,6 +36,19 @@ a, a:hover {
 ul {
   padding-left: 0px!important;
 }
+form {
+  margin-block-end: 0px!important;
+}
+button {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  padding: 0px;
+  outline: none;
+}
+button:focus {
+  outline:0;
+}
 .container, .container-fluid {
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -98,7 +111,7 @@ ul {
   background-color: rgb(255,255,255,0.35);
   padding: 1em;
 }
-.content-box li {
+.content-box li, .add-input, .add-btn {
   display: inline-block;
   text-decoration: none;
   padding: 0.5em;
@@ -143,4 +156,7 @@ input::placeholder {
 }
 .show {
   display: inline-block;
+}
+.submit-btn {
+  display: none;
 }
