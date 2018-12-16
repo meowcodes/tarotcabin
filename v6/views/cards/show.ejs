@@ -1,30 +1,48 @@
 <% include ../partials/header %>
 <div class="container-fluid cards-show">
 <div class="row text-center">
-  <div class="col-12 col-md-4">
-    <div class="single-card">
-      <svg viewBox="0,0 400,600">
-        <use xlink:href="#card" href="#card"></use>
-        <text class="text-uppercase" x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px"><%= tarotCard.title %></text>
-      </svg>
-    </div>
+<div class="col-12 col-md-4 card-box">
+<div class="single-card-side sticky-top">
+<div class="single-card">
+  <div class="card-key">
+    <span><%= tarotCard.key %></span>
   </div>
-  <div class="col-12 col-md-8">
-    <div class="tarot-content">
-      <div class="keywords-box">
-        <div>
-          <h3>Keywords</h3>
-        </div>
-        <div class="keywords">
-          <ul>
-            <% for(var i=0; i<tarotCard.keywords.length; i++){ %>
-              <li><%= tarotCard.keywords[i] %><span class="delete"><i class="fas fa-trash"></i></span></li>
-            <% } %>
-          </ul>
+  <svg viewBox="0,0 400,600">
+    <use xlink:href="#card" href="#card"></use>
+    <text class="text-uppercase" x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px"><%= tarotCard.title %></text>
+  </svg>
+  <div class="card-details">
+    <span><%= tarotCard.element %></span>
+  </div>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-8 content-side">
+<div class="content">
+  <div class="content-box">
+      <div class="content-title">
+        <span>Keywords</span>
+      </div>
+      <div class="keywords">
+        <ul class="keywords-list">
+          <% for(var i=0; i<tarotCard.keywords.length; i++){ %>
+            <li><span><%= tarotCard.keywords[i] %></span><span class="remove-item"><i class="fas fa-times-circle"></i></span></li>
+          <% } %>
+        </ul>
+        <div class="add-div">
+          <li class="add-input"><span><input class="keyword-input" type="text" placeholder="keyword"></span></li>
+          <li class="add-btn"><span><i class="fas fa-plus"></i></span></li>
         </div>
       </div>
     </div>
-  </div>
 </div>
 </div>
+</div>
+</div>
+<script>
+  console.log("<%= tarotCard.title %>");
+  $(document).click(function(event){
+    console.log(event.target);
+  });
+</script>
 <% include ../partials/footer %>
