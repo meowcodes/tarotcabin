@@ -15,12 +15,18 @@ app.set("view engine", "ejs");
 // seed initial data
 SeedDB();
 
-app.get("/", function(req, res) {
+// landing page
+app.get("/", function(req, res){
+  res.render("index");
+});
+
+// cards index page (show all cards)
+app.get("/cards/", function(req, res) {
   TarotDeck.find({}, function(err, allCards){
     if(err){
       console.log(err);
     }else {
-      res.render("index", {tarotDeck : allCards});
+      res.render("cards/index", {tarotDeck : allCards});
     }
   });
 });

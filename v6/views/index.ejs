@@ -1,39 +1,12 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>☾ Tarot Cabin</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Roboto:400,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="major-arcana-box col-12 d-flex flex-row flex-wrap justify-content-center">
-          <% tarotDeck.forEach(function(tarotCard){ %>
-          <div class="tarot-card">
-            <svg viewBox="0,0 400,600">
-              <use xlink:href="#card" href="#card"></use>
-              <text class="text-uppercase" x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px"><%= tarotCard.title %></text>
-            </svg>
-            <a href="/cards/<%= tarotCard._id %>"><span></span></a>
-          </div>
-          <% }); %>
-      </div>
-      </div>
-    </div>
-  </body>
-  <svg x="0px" y="0px" viewBox="0 0 400 600" enable-background="new 0 0 400 600" xml:space="preserve" style="display:none;">
-    <symbol id="card-template">
-      <g id="card" opacity="0.75">
-        <rect fill="#FFFFFF" width="400" height="600"/>
-      </g>
-      <g id="card-text">
-        <text  x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px">THE MAGICIAN</text>
-      </g>
-    </symbol>
-  </svg>
-</html>
+<% include ./partials/header %>
+<div class="container-fluid index">
+<div class="row">
+  <div class="col-12 text-center col-12 text-center d-flex flex-column justify-content-center align-content-center">
+    <h1 class="title my-3">Welcome to the Tarot Cabin</h1>
+    <h5 class="liner">cozy space for spiritual healing and learning</h5>
+    <a class="tc-btn" href="/cards/new">Choose Deck</a>
+    <a class="tc-btn" href="/cards/">Cards</a>
+  </div>
+</div>
+</div>
+<% include ./partials/footer %>
