@@ -7,4 +7,4 @@ var tarotCardSchema = new mongoose.Schema({
   keywords: [String]
 }, {collection: "tarot"});
 
-module.exports = mongoose.model("tarotCards", tarotCardSchema);
+module.exports = mongoose.model("tarotCards", tarotCardSchema, "tarot");

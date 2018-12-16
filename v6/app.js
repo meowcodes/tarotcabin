@@ -31,6 +31,18 @@ app.get("/cards/", function(req, res) {
   });
 });
 
+// cards show page (show individual card details)
+app.get("/cards/:id", function(req, res){
+  TarotDeck.findById(req.params.id, function(err, card){
+    if(err){
+      console.log(err);
+    }else {
+      console.log(req.params, card.title);
+      res.render("cards/show", {tarotCard : card});
+    }
+  });
+});
+
 app.listen(7000, function() {
   console.log("tarot cabin is open");
 }); 
