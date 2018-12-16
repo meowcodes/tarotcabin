@@ -1,6 +1,7 @@
 var express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
+    ejsLint     = require('ejs-lint'),
     mongoose    = require("mongoose"),
     TarotDeck   = require("./models/tarotDeck.js"),
     SeedDB      = require("./seeds");
@@ -37,7 +38,7 @@ app.get("/cards/:id", function(req, res){
     if(err){
       console.log(err);
     }else {
-      console.log(req.params, card.title);
+      console.log(card.title);
       res.render("cards/show", {tarotCard : card});
     }
   });

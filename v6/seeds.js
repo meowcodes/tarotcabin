@@ -152,7 +152,7 @@ function seedDB(){
           if(err){
             console.log(err);
           }else {
-            console.log(card.title);
+            console.log("added ", card.title);
           }
         });
       }

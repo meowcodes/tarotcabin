@@ -10,10 +10,19 @@
     </div>
   </div>
   <div class="col-12 col-md-8">
-    <div class="text-box">
-      <h3>keywords</h3>
-      <%= tarotCard.keywords %>
-      <h3>interpretation</h3>
+    <div class="tarot-content">
+      <div class="keywords-box">
+        <div class="title">
+          <h3>Keywords</h3>
+        </div>
+        <div class="keywords">
+          <ul>
+            <% for(var i=0; i<tarotCard.keywords.length; i++){ %>
+              <li><%= tarotCard.keywords[i] %><span class="delete"><i class="fas fa-trash"></i></span></li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
