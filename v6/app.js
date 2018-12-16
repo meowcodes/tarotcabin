@@ -4,9 +4,7 @@ var express     = require("express"),
     mongoose    = require("mongoose"),
     TarotDeck   = require("./models/tarotDeck.js"),
     SeedDB      = require("./seeds");
-
-
-
+    
 // connect to local server
 mongoose.connect("mongodb://localhost:27017/tarot", {useNewUrlParser: true});
 
@@ -18,7 +16,13 @@ app.set("view engine", "ejs");
 SeedDB();
 
 app.get("/", function(req, res) {
-  res.render("index");
+  TarotDeck.find({}, function(err, allCards){
+    if(err){
+      console.log(err);
+    }else {
+      res.render("index", {tarotDeck : allCards});
+    }
+  });
 });
 
 app.listen(7000, function() {

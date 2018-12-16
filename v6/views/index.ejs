@@ -1,4 +1,4 @@
-<http>
+<html>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +10,30 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
   </head>
   <body>
-    <div>
-      <h3>welcome to the tarot cabin</h3>
+    <div class="container">
+      <div class="row">
+        <div class="major-arcana-box col-12 d-flex flex-row flex-wrap justify-content-center">
+          <% tarotDeck.forEach(function(tarotCard){ %>
+          <div class="tarot-card">
+            <svg viewBox="0,0 400,600">
+              <use xlink:href="#card" href="#card"></use>
+              <text class="text-uppercase" x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px"><%= tarotCard.title %></text>
+            </svg>
+            <a href="/cards/<%= tarotCard._id %>"><span></span></a>
+          </div>
+          <% }); %>
+      </div>
+      </div>
     </div>
   </body>
-</http>
+  <svg x="0px" y="0px" viewBox="0 0 400 600" enable-background="new 0 0 400 600" xml:space="preserve" style="display:none;">
+    <symbol id="card-template">
+      <g id="card" opacity="0.75">
+        <rect fill="#FFFFFF" width="400" height="600"/>
+      </g>
+      <g id="card-text">
+        <text  x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px">THE MAGICIAN</text>
+      </g>
+    </symbol>
+  </svg>
+</html>
