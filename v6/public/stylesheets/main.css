@@ -66,7 +66,16 @@ button:focus {
   color: inherit;
   text-transform: uppercase;
 }
-
+header {
+  background-color: rgb(255,255,255,0.5);
+  position: fixed;
+  width: 100vw;
+  z-index: 300;
+}
+.navbar {
+  max-width: 960px;
+  margin: 0 auto;
+}
 /* landing page */
 .index {
   background-image: linear-gradient(to right bottom, #fff38a, #ffe187, #ffd088, #ffc18c, #ffb391, #ffa996, #fe9f9c, #f997a5, #f090ad, #e48ab6, #d586bf, #c184c7);
@@ -75,6 +84,12 @@ button:focus {
 /* cards index page - all cards */
 .cards-index {
   background-image: linear-gradient(to right top, #f589b5, #cda3eb, #90beff, #6ad1f4, #83dcd6); 
+}
+.cards-index .row {
+  padding-top: 4em;
+}
+.deck-nav {
+  margin: 0 auto;
 }
 .tarot-card {
   width: 23%;
@@ -90,7 +105,8 @@ button:focus {
   background-image: linear-gradient(to right top, #fff38a, #d1f39b, #a9efb2, #8de7c7, #83dcd6);
 }
 .single-card-side {
-  padding: 1.5em;
+  z-index: 3;
+  padding-top: 3.5em;
 }
 .single-card {
 }

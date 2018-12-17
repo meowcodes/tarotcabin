@@ -1,54 +1,54 @@
 <% include ../partials/header %>
 <div class="container-fluid cards-show">
 <div class="row text-center">
-<div class="col-12 col-md-4 card-box">
-<div class="single-card-side sticky-top">
-<div class="single-card">
-  <div class="card-key">
-    <span><%= tarotCard.key %></span>
-  </div>
-  <svg viewBox="0,0 400,600">
-    <use xlink:href="#card" href="#card"></use>
-    <text class="text-uppercase" x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px"><%= tarotCard.title %></text>
-  </svg>
-  <div class="card-details">
-    <span><%= tarotCard.element %></span>
-  </div>
-</div>
-</div>
-</div>
-<div class="col-12 col-md-8 content-side">
-<div class="content">
-  <div class="content-box">
-      <div class="content-title">
-        <span>Keywords</span>
-      </div>
-      <div class="keywords">
-        <ul class="keywords-list">
-          <% for(var i=0; i<tarotCard.keywords.length; i++){ %>
-            <li>
-              <span><%= tarotCard.keywords[i] %></span>
-              <div class="remove-item">
-                <form id="remove-form" action="/cards/<%= tarotCard._id %>?_method=DELETE" method="POST">
-                  <button class="remove-btn" type="submit"><i class="fas fa-times-circle"></i></button>
-                  <input type='hidden' name='byeKeyword' value='<%= i %>'>
-                </form>
-              </div>
-            </li>
-          <% } %>
-        </ul> 
-        <div class="add-div">
-          <form action="/cards/<%= tarotCard._id %>" method="POST" onsubmit="this.submit(); this.reset(); return false;">
-            <div class="add-input"><span><input class="keyword-input" name="keyword" placeholder="keyword"></span></div>
-            <div class="add-btn"><span><i class="fas fa-plus"></i></span></div>
-            <button class="submit-btn" type="submit"></button>
-          </form>
+  <div class="col-12 col-md-4 card-box">
+    <div class="single-card-side sticky-top">
+      <div class="single-card">
+        <div class="card-key">
+          <span><%= tarotCard.key %></span>
         </div>
-        
+        <svg viewBox="0,0 400,600">
+          <use xlink:href="#card" href="#card"></use>
+          <text class="text-uppercase" x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px"><%= tarotCard.title %></text>
+        </svg>
+        <div class="card-details">
+          <span><%= tarotCard.element %></span>
+        </div>
       </div>
     </div>
-</div>
-</div>
+  </div>
+  <div class="col-12 col-md-8 content-side pt-md-5">
+    <div class="content">
+      <div class="content-box">
+          <div class="content-title">
+            <span>Keywords</span>
+          </div>
+          <div class="keywords">
+            <ul class="keywords-list">
+              <% for(var i=0; i<tarotCard.keywords.length; i++){ %>
+                <li>
+                  <span><%= tarotCard.keywords[i] %></span>
+                  <div class="remove-item">
+                    <form id="remove-form" action="/cards/<%= tarotCard._id %>?_method=DELETE" method="POST">
+                      <button class="remove-btn" type="submit"><i class="fas fa-times-circle"></i></button>
+                      <input type='hidden' name='byeKeyword' value='<%= i %>'>
+                    </form>
+                  </div>
+                </li>
+              <% } %>
+            </ul> 
+            <div class="add-div">
+              <form action="/cards/<%= tarotCard._id %>" method="POST" onsubmit="this.submit(); this.reset(); return false;">
+                <div class="add-input"><span><input class="keyword-input" name="keyword" placeholder="keyword"></span></div>
+                <div class="add-btn"><span><i class="fas fa-plus"></i></span></div>
+                <button class="submit-btn" type="submit"></button>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+  </div>
 </div>
 </div>
 <script>

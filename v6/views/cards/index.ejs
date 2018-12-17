@@ -1,18 +1,57 @@
 <% include ../partials/header %>
 <div class="container-fluid cards-index">
 <div class="row">
-<div class="major-arcana-box col-12 d-flex flex-row flex-wrap justify-content-center">
-  <% tarotDeck.forEach(function(tarotCard){ %>
-  <div class="tarot-card">
-    <a href="/cards/<%= tarotCard._id %>">
-      <svg viewBox="0,0 400,600">
-        <use xlink:href="#card" href="#card"></use>
-        <text class="text-uppercase" x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px"><%= tarotCard.title %></text>
-      </svg>
-    </a>
+  <div class="deck-nav">
+    <button class="tc-btn">
+      <a href="#major-arcana-box">
+        <span>Major Arcana</span>
+      </a>
+    </button>
+    <button class="tc-btn">
+      <a href="#cups-box">
+        <span>Cups</span>
+      </a>
+    </button>
+    <button class="tc-btn">
+      <a href="#pentacles-box">
+        <span>Pentacles</span>
+      </a>
+    </button>
+    <button class="tc-btn">
+      <a href="#swords-box">
+        <span>Swords</span>
+      </a>
+    </button>
+    <button class="tc-btn">
+      <a href="#wands-box">
+        <span>Wands</span>
+      </a>
+    </button>
   </div>
-  <% }); %>
-</div>
+  <div class="major-arcana-box col-12 d-flex flex-row flex-wrap justify-content-center" id="major-arcana-box">
+    <% tarotDeck.forEach(function(tarotCard){ %>
+    <div class="tarot-card">
+      <a href="/cards/<%= tarotCard._id %>">
+        <svg viewBox="0,0 400,600">
+          <use xlink:href="#card" href="#card"></use>
+          <text class="text-uppercase" x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px"><%= tarotCard.title %></text>
+        </svg>
+      </a>
+    </div>
+    <% }); %>
+  </div>
+  <div class="cups-box col-12 d-flex flex-row flex-wrap justify-content-center" id="cups-box">
+      <% for(var i=1; i<15; i ++) { %>
+      <div class="tarot-card">
+        <a href="/cards/cups/<%= i %>">
+          <svg viewBox="0,0 400,600">
+            <use xlink:href="#card" href="#card"></use>
+            <text class="text-uppercase" x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px"><%= i %> of cups</text>
+          </svg>
+        </a>
+      </div>
+      <% } %>
+    </div>
 </div>
 </div>
 <% include ../partials/footer %>
