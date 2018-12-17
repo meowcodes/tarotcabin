@@ -85,11 +85,11 @@ header {
 .cards-index {
   background-image: linear-gradient(to right top, #f589b5, #cda3eb, #90beff, #6ad1f4, #83dcd6); 
 }
-.cards-index .row {
+.cards-index .row, .deck-box {
   padding-top: 4em;
 }
 .deck-nav {
-  margin: 0 auto;
+  margin: 2em auto 0 auto;
 }
 .tarot-card {
   width: 23%;
