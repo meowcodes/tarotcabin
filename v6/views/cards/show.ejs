@@ -1,5 +1,7 @@
 <% include ../partials/header %>
-<div class="container-fluid cards-show">
+<body class="cards-show">
+<% include ../partials/nav %>
+<div class="container-fluid">
 <div class="row text-center">
   <div class="col-12 col-md-4 card-box">
     <div class="single-card-side sticky-top">
@@ -46,7 +48,6 @@
       </div>
     </div>
   </div>
-  <span><%= Object.entries(tarotCard.toJSON()) %></span><br/>
   <span><%= Object.keys(tarotCard.toJSON()) %></span>
   <!-- <div class="content-box">
     <div class="content-title">

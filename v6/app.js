@@ -84,17 +84,17 @@ app.put("/cards/:id", function(req, res){
 });
 
 // NEW            add new card details
-app.post("/cards/:id", function(req, res){
-  TarotDeck.findById(req.params.id, function(err, newCardObj){
-    if(err){
-      console.log(err);
-    }else {
-      console.log(newCardObj);
-      card.save();
-      res.redirect("/cards/"+ req.params.id);
-    }
-  });
-});
+// app.post("/cards/:id", function(req, res){
+//   TarotDeck.findById(req.params.id, function(err, newCardObj){
+//     if(err){
+//       console.log(err);
+//     }else {
+//       console.log(newCardObj);
+//       card.save();
+//       res.redirect("/cards/"+ req.params.id);
+//     }
+//   });
+// });
 
 // NEW            add new keyword
 app.post("/cards/:id", function(req, res){
