@@ -5,6 +5,7 @@ var express         = require("express"),
     ejsLint         = require('ejs-lint'),
     mongoose        = require("mongoose"),
     TarotDeck       = require("./models/tarotDeck.js"),
+    DefaultDeck     = require("./models/defaultDeck.js"),
     SeedDB          = require("./seeds");
     
 // connect to local server
@@ -19,6 +20,31 @@ SeedDB();
 // INDEX          landing page
 app.get("/", function(req, res){
   res.render("index");
+});
+
+// NEW            new deck page
+app.get("/cards/new", function(req, res){
+  res.render("cards/new");
+})
+
+// CREATE         create a new deck
+app.post("/cards", function(req, res){
+  SeedDB();
+  var newDeckSpecs = req.body.DeckSpecs;
+  if(newDeckSpecs === "RWS"){
+    for(var i=0; i<DefaultDeck.length; i++){
+      TarotDeck.create(DefaultDeck[i], function(err, card){
+        if(err){
+          console.log(err);
+        }else {
+          console.log("added ", card.title);
+        }
+      });
+    }
+  }else {
+    console.log(newDeckSpecs);
+  }
+  res.redirect("/cards/");
 });
 
 // INDEX          cards index page (show all cards)
@@ -45,12 +71,13 @@ app.get("/cards/:id", function(req, res){
 
 // UPDATE         update existing card details
 app.put("/cards/:id", function(req, res){
-  var editedElement = req.body.editedElement;
+  var editedCard = req.body.editedCard;
 
-  TarotDeck.findByIdAndUpdate(req.params.id, editedElement,function(err, editedElement) {
+  TarotDeck.findByIdAndUpdate(req.params.id, editedCard,function(err, editedCard) {
     if(err) {
       console.log(err);
     }else {
+      console.log(editedCard);
       res.redirect("/cards/" + req.params.id);
     }
   });
