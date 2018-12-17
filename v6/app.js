@@ -9,21 +9,19 @@ var express         = require("express"),
     
 // connect to local server
 mongoose.connect("mongodb://localhost:27017/tarot", {useNewUrlParser: true});
-
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
-
 // seed initial data
 SeedDB();
 
-// landing page
+// INDEX          landing page
 app.get("/", function(req, res){
   res.render("index");
 });
 
-// cards index page (show all cards)
+// INDEX          cards index page (show all cards)
 app.get("/cards/", function(req, res) {
   TarotDeck.find({}, function(err, allCards){
     if(err){
@@ -34,7 +32,7 @@ app.get("/cards/", function(req, res) {
   });
 });
 
-// cards show page (show individual card details)
+// SHOW & EDIT    show individual card details 
 app.get("/cards/:id", function(req, res){
   TarotDeck.findById(req.params.id, function(err, card){
     if(err){
@@ -45,7 +43,33 @@ app.get("/cards/:id", function(req, res){
   });
 });
 
-// add new keyword
+// UPDATE         update existing card details
+app.put("/cards/:id", function(req, res){
+  var editedElement = req.body.editedElement;
+
+  TarotDeck.findByIdAndUpdate(req.params.id, editedElement,function(err, editedElement) {
+    if(err) {
+      console.log(err);
+    }else {
+      res.redirect("/cards/" + req.params.id);
+    }
+  });
+});
+
+// NEW            add new card details
+app.post("/cards/:id", function(req, res){
+  TarotDeck.findById(req.params.id, function(err, newCardObj){
+    if(err){
+      console.log(err);
+    }else {
+      console.log(newCardObj);
+      card.save();
+      res.redirect("/cards/"+ req.params.id);
+    }
+  });
+});
+
+// NEW            add new keyword
 app.post("/cards/:id", function(req, res){
   TarotDeck.findById(req.params.id, function(err, card){
     if(err){
@@ -61,7 +85,7 @@ app.post("/cards/:id", function(req, res){
   });
 });
 
-// delete a keyword
+// DESTROY         delete a keyword
 app.delete("/cards/:id", function(req, res){
   TarotDeck.findById(req.params.id, function(err, card){
     if(err){
