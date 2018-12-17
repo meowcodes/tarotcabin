@@ -26,3 +26,18 @@ $(".keyword-input").keypress(function(event) {
     // $(".keywords-list").append('<li><span>' + inputText + '</span><span class="remove-item"><i class="fas fa-times-circle"></i></span></li>');
   }
 });
+
+// show up button when scrolled down
+$(window).scroll(function() {
+  var deckNav = $("#deck-nav").height();
+  if($(this).scrollTop()>=deckNav){
+    document.getElementById("upBtn").style.display = "block";
+  } else {
+    document.getElementById("upBtn").style.display = "none";
+  }
+});
+
+function goUp(){
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}

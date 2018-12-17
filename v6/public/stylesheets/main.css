@@ -76,6 +76,17 @@ header {
   max-width: 960px;
   margin: 0 auto;
 }
+.up-btn {
+  z-index: 3;
+  display: none;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+}
+.up-btn:hover {
+  background-color: white;
+}
+
 /* landing page */
 .index {
   background-image: linear-gradient(to right bottom, #fff38a, #ffe187, #ffd088, #ffc18c, #ffb391, #ffa996, #fe9f9c, #f997a5, #f090ad, #e48ab6, #d586bf, #c184c7);

@@ -1,7 +1,7 @@
 <% include ../partials/header %>
 <div class="container-fluid cards-index">
 <div class="row">
-  <div class="deck-nav">
+  <div class="deck-nav" id="deck-nav">
     <button class="tc-btn">
       <a href="#major-arcana-box">
         <span>Major Arcana</span>
@@ -88,6 +88,7 @@
     </div>
     <% } %>
   </div>
+  <button class="up-btn tc-btn" id="upBtn" onclick="goUp()">Up</button>
 </div>
 </div>
 <% include ../partials/footer %>
