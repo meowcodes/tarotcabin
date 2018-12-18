@@ -1,5 +1,5 @@
 <% include ../partials/header %>
-<body class="cards-index">
+<body class="deck-index">
 <% include ../partials/nav %>
 <div class="container-fluid">
 <div class="row">
@@ -33,7 +33,7 @@
   <div class="major-arcana-box deck-box col-12 d-flex flex-row flex-wrap justify-content-center" id="major-arcana-box">
     <% tarotDeck.forEach(function(tarotCard){ %>
     <div class="tarot-card">
-      <a href="/cards/<%= tarotCard._id %>">
+      <a href="/deck/<%= tarotCard._id %>">
         <svg viewBox="0,0 400,600">
           <use xlink:href="#card" href="#card"></use>
           <text class="text-uppercase" x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px"><%= tarotCard.title %></text>
@@ -45,7 +45,7 @@
   <div class="cups-box deck-box col-12 d-flex flex-row flex-wrap justify-content-center" id="cups-box">
     <% for(var i=1; i<15; i ++) { %>
     <div class="tarot-card">
-      <a href="/cards/cups/<%= i %>">
+      <a href="/deck/cups/<%= i %>">
         <svg viewBox="0,0 400,600">
           <use xlink:href="#card" href="#card"></use>
           <text class="text-uppercase" x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px"><%= i %> of cups</text>
@@ -57,7 +57,7 @@
   <div class="pentacles-box deck-box col-12 d-flex flex-row flex-wrap justify-content-center" id="pentacles-box">
     <% for(var i=1; i<15; i ++) { %>
     <div class="tarot-card">
-      <a href="/cards/pentacles/<%= i %>">
+      <a href="/deck/pentacles/<%= i %>">
         <svg viewBox="0,0 400,600">
           <use xlink:href="#card" href="#card"></use>
           <text class="text-uppercase" x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px"><%= i %> of pentacles</text>
@@ -69,7 +69,7 @@
   <div class="swords-box deck-box col-12 d-flex flex-row flex-wrap justify-content-center" id="swords-box">
     <% for(var i=1; i<15; i ++) { %>
     <div class="tarot-card">
-      <a href="/cards/swords/<%= i %>">
+      <a href="/deck/swords/<%= i %>">
         <svg viewBox="0,0 400,600">
           <use xlink:href="#card" href="#card"></use>
           <text class="text-uppercase" x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px"><%= i %> of swords</text>
@@ -81,7 +81,7 @@
   <div class="wands-box deck-box col-12 d-flex flex-row flex-wrap justify-content-center" id="wands-box">
     <% for(var i=1; i<15; i ++) { %>
     <div class="tarot-card">
-      <a href="/cards/wands/<%= i %>">
+      <a href="/deck/wands/<%= i %>">
         <svg viewBox="0,0 400,600">
           <use xlink:href="#card" href="#card"></use>
           <text class="text-uppercase" x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px"><%= i %> of wands</text>

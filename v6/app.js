@@ -23,12 +23,12 @@ app.get("/", function(req, res){
 });
 
 // NEW            new deck page
-app.get("/cards/new", function(req, res){
-  res.render("cards/new");
+app.get("/deck/new", function(req, res){
+  res.render("deck/new");
 })
 
 // CREATE         create a new deck
-app.post("/cards", function(req, res){
+app.post("/deck", function(req, res){
   SeedDB();
   var newDeckSpecs = req.body.DeckSpecs;
   if(newDeckSpecs === "RWS"){
@@ -44,33 +44,33 @@ app.post("/cards", function(req, res){
   }else {
     console.log(newDeckSpecs);
   }
-  res.redirect("/cards/");
+  res.redirect("/deck/");
 });
 
-// INDEX          cards index page (show all cards)
-app.get("/cards/", function(req, res) {
+// INDEX          deck index page (show all cards)
+app.get("/deck/", function(req, res) {
   TarotDeck.find({}, function(err, allCards){
     if(err){
       console.log(err);
     }else {
-      res.render("cards/index", {tarotDeck : allCards});
+      res.render("deck/index", {tarotDeck : allCards});
     }
   });
 });
 
 // SHOW & EDIT    show individual card details 
-app.get("/cards/:id", function(req, res){
+app.get("/deck/:id", function(req, res){
   TarotDeck.findById(req.params.id, function(err, card){
     if(err){
       console.log(err);
     }else {
-      res.render("cards/show", {tarotCard : card});
+      res.render("deck/show", {tarotCard : card});
     }
   });
 });
 
 // UPDATE         update existing card details
-app.put("/cards/:id", function(req, res){
+app.put("/deck/:id", function(req, res){
   var editedCard = req.body.editedCard;
 
   TarotDeck.findByIdAndUpdate(req.params.id, editedCard,function(err, editedCard) {
@@ -78,26 +78,26 @@ app.put("/cards/:id", function(req, res){
       console.log(err);
     }else {
       console.log(editedCard);
-      res.redirect("/cards/" + req.params.id);
+      res.redirect("/deck/" + req.params.id);
     }
   });
 });
 
 // NEW            add new card details
-// app.post("/cards/:id", function(req, res){
+// app.post("/deck/:id", function(req, res){
 //   TarotDeck.findById(req.params.id, function(err, newCardObj){
 //     if(err){
 //       console.log(err);
 //     }else {
 //       console.log(newCardObj);
 //       card.save();
-//       res.redirect("/cards/"+ req.params.id);
+//       res.redirect("/deck/"+ req.params.id);
 //     }
 //   });
 // });
 
 // NEW            add new keyword
-app.post("/cards/:id", function(req, res){
+app.post("/deck/:id", function(req, res){
   TarotDeck.findById(req.params.id, function(err, card){
     if(err){
       console.log(err);
@@ -107,13 +107,13 @@ app.post("/cards/:id", function(req, res){
       card.keywords.push(newKeyword);
       card.save();
       console.log(card.keywords);
-      res.redirect("/cards/"+ req.params.id);
+      res.redirect("/deck/"+ req.params.id);
     }
   });
 });
 
 // DESTROY         delete a keyword
-app.delete("/cards/:id", function(req, res){
+app.delete("/deck/:id", function(req, res){
   TarotDeck.findById(req.params.id, function(err, card){
     if(err){
       console.log(err);
@@ -121,7 +121,7 @@ app.delete("/cards/:id", function(req, res){
       card.keywords.splice(req.body.byeKeyword, 1);
       card.save();
       console.log(card.keywords);
-      res.redirect("/cards/"+ req.params.id);
+      res.redirect("/deck/"+ req.params.id);
     }
   });
 });

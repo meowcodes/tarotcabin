@@ -1,5 +1,5 @@
 <% include ../partials/header %>
-<body class="cards-show">
+<body class="deck-show">
 <% include ../partials/nav %>
 <div class="container-fluid">
 <div class="row text-center">
@@ -31,7 +31,7 @@
           <li>
             <span><%= tarotCard.keywords[i] %></span>
             <div class="remove-item">
-              <form id="remove-form" action="/cards/<%= tarotCard._id %>?_method=DELETE" method="POST">
+              <form id="remove-form" action="/deck/<%= tarotCard._id %>?_method=DELETE" method="POST">
                 <button class="remove-btn" type="submit"><i class="fas fa-times-circle"></i></button>
                 <input type='hidden' name='byeKeyword' value='<%= i %>'>
               </form>
@@ -40,7 +40,7 @@
         <% } %>
       </ul> 
       <div class="add-div">
-        <form action="/cards/<%= tarotCard._id %>" method="POST" onsubmit="this.submit(); this.reset(); return false;">
+        <form action="/deck/<%= tarotCard._id %>" method="POST" onsubmit="this.submit(); this.reset(); return false;">
           <div class="add-input"><span><input class="keyword-input" name="keyword" placeholder="keyword"></span></div>
           <div class="add-btn"><span><i class="fas fa-plus"></i></span></div>
           <button class="submit-btn" type="submit"></button>

@@ -96,14 +96,14 @@ header {
   background-image: linear-gradient(to right bottom, #fff38a, #ffe187, #ffd088, #ffc18c, #ffb391, #ffa996, #fe9f9c, #f997a5, #f090ad, #e48ab6, #d586bf, #c184c7);
 }
 
-/* cards index page - all cards */
-.cards-index {
+/* deck index page - all cards */
+.deck-index {
   background-image: linear-gradient(to right top, #f589b5, #cda3eb, #90beff, #6ad1f4, #83dcd6); 
 }
-.cards-index header {
+.deck-index header {
   background-image: linear-gradient(to right, #90beff, #6ad1f4, #83dcd6);
 }
-.cards-index .row, .deck-box {
+.deck-index .row, .deck-box {
   padding-top: 4em;
 }
 .deck-nav {
@@ -118,11 +118,11 @@ header {
   opacity: 0.35;
 }
 
-/* cards show page - single card details */
-.cards-show {
+/* deck show page - single card details */
+.deck-show {
   background-image: linear-gradient(to right top, #6fbaf2, #63c4ef, #64cee8, #70d5df, #83dcd6);
 }
-.cards-show header {
+.deck-show header {
   background-image: linear-gradient(to right, #64cee8, #70d5df, #83dcd6);
 }
 .single-card-side {
@@ -199,6 +199,6 @@ input::placeholder {
 }
 
 /* new deck initiation page */
-.cards-new {
+.deck-new {
   background-image: linear-gradient(to right top, #fff38a, #ffdc85, #ffc689, #ffb391, #ffa39b);
 }
