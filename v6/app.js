@@ -22,7 +22,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use("/deck", deckRoutes);
 app.use("/journal", journalRoutes);
-app.use("/readings", readingRoutes);
+app.use("/reading", readingRoutes);
 app.use("/explore", exploreRoutes);
 app.set("view engine", "ejs");
 

@@ -90,6 +90,23 @@ header {
 .up-btn:hover {
   background-color: white;
 }
+input {
+  box-sizing: border-box;
+  width: 100px;
+  padding: 0.5em;
+  border: none;
+  outline: none;
+  display: none;
+  color: inherit;
+  background-color: transparent;
+}
+input, 
+input::placeholder {
+  font-family: 'Bree Serif', serif;
+}
+input::placeholder {
+  color: #d4d5d7;
+}
 
 /* landing page */
 .index {
@@ -155,7 +172,6 @@ header {
   margin: 0.5em;
   background-color: rgb(255,255,255,0.5);
 }
-
 .remove-item {
   display: inline-block;
   width: 0;
@@ -174,23 +190,6 @@ header {
 .add-input {
   padding: 0px!important;
 }
-input {
-  box-sizing: border-box;
-  width: 100px;
-  padding: 0.5em;
-  border: none;
-  outline: none;
-  display: none;
-  color: inherit;
-  background-color: transparent;
-}
-input, 
-input::placeholder {
-  font-family: 'Bree Serif', serif;
-}
-input::placeholder {
-  color: #d4d5d7;
-}
 .show {
   display: inline-block;
 }
@@ -198,7 +197,22 @@ input::placeholder {
   display: none;
 }
 
-/* new deck initiation page */
+/* deck initiation page */
 .deck-new {
   background-image: linear-gradient(to right top, #fff38a, #ffdc85, #ffc689, #ffb391, #ffa39b);
+}
+
+/* journal index page - all journal entries */
+.journal-index {
+  background-image: linear-gradient(to right top, #f589b5, #fa8ead, #fe95a5, #ff9c9f, #ffa39b);
+}
+
+/* reading index page - daily draw and link to past readings */
+.reading-index {
+  background-image: linear-gradient(to right top, #fff38a, #ffdc85, #ffc689, #ffb391, #ffa39b);
+}
+
+/* explore index page - all card exercises and journal prompt */
+.explore-index {
+  background-image: linear-gradient(to left bottom, #fff38a, #d1f39b, #a9efb2, #8de7c7, #83dcd6);
 }
