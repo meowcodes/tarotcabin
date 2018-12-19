@@ -1,0 +1,24 @@
+<% include ../partials/header %>
+<body class="reading-new">
+<% include ../partials/nav %>
+<div class="container-fluid">
+<div class="row">
+  <div class="col-12 text-center m-auto">
+    <div class="single-card-side sticky-top">
+      <div class="single-card">
+        <div class="card-key">
+          <span><%= tarotCard.key %></span>
+        </div>
+        <svg viewBox="0,0 400,600">
+          <use xlink:href="#card" href="#card"></use>
+          <text class="text-uppercase" x="50%" y="50%"  dominant-baseline="middle" text-anchor="middle" font-size="36px"><%= tarotCard.title %></text>
+        </svg>
+        <div class="card-details">
+          <span><%= tarotCard.element %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<% include ../partials/footer %>

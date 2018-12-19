@@ -8,7 +8,6 @@ var express         = require("express"),
     DefaultDeck     = require("./models/defaultDeck.js"),
     SeedDB          = require("./seeds");
 
-    
 // requiring routes
 var deckRoutes      = require("./routes/deck"),
     journalRoutes   = require("./routes/journal"),

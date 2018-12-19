@@ -4,8 +4,12 @@
 <div class="container-fluid">
 <div class="row">
   <div class="col-12">
-    <span>daily draw here</span>
-    <span>a few past readings here and link to all past readings</span>
+    <button class="tc-btn">
+      <a href="/reading/new">Daily Draw</a>
+    </button>
+    <form action="/reading" method="POST">
+      <button class="tc-btn" name="dailyDraw" value="newDraw">Daily Draw</button>
+    </form>
   </div>
   <button class="up-btn tc-btn" id="upBtn" onclick="goUp()">Up</button>
 </div>

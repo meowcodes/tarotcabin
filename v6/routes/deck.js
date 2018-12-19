@@ -16,7 +16,7 @@ router.get("/", function(req, res) {
 // NEW            new deck page
 router.get("/new", function(req, res){
   res.render("deck/new");
-})
+});
 
 // CREATE         create a new deck
 router.post("/", function(req, res){

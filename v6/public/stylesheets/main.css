@@ -107,6 +107,13 @@ input::placeholder {
 input::placeholder {
   color: #d4d5d7;
 }
+.journal-index .row,
+.explore-index .row,
+.reading-index .row,
+.deck-index .row, 
+.deck-box {
+  padding-top: 4em;
+}
 
 /* landing page */
 .index {
@@ -119,9 +126,6 @@ input::placeholder {
 }
 .deck-index header {
   background-image: linear-gradient(to right, #90beff, #6ad1f4, #83dcd6);
-}
-.deck-index .row, .deck-box {
-  padding-top: 4em;
 }
 .deck-nav {
   margin: 2em auto 0 auto;
