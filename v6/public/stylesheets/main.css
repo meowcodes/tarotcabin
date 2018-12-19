@@ -216,6 +216,12 @@ input::placeholder {
   background-image: linear-gradient(to right top, #fff38a, #ffdc85, #ffc689, #ffb391, #ffa39b);
 }
 
+/* new daily draw page */
+.reading-new {
+  background-image: linear-gradient(to right top, #ffc689, #ffbc8b, #ffb38f, #ffab95, #ffa39b);
+}
+
+
 /* explore index page - all card exercises and journal prompt */
 .explore-index {
   background-image: linear-gradient(to left bottom, #fff38a, #d1f39b, #a9efb2, #8de7c7, #83dcd6);
